@@ -31,7 +31,7 @@
       Serial.println("Sending SMS...");
       sim800l.print("AT+CMGF=1\r"); //Sets the module to SMS mode
       delay(100);
-      sim800l.print("AT+CMGS=\"+48500060696\"\r");
+      sim800l.print("AT+CMGS=\"+123123123\"\r");
       delay(500);
       sim800l.print("Odczyt gowna: " + String(distance) + "cm"); // Msg
       delay(500);
@@ -64,8 +64,7 @@
       const int AVG = 41;
       const int DISTANT = 300;
       
-      if (Distance >= MaximumRange || Distance <= MinimumRange || Distance == 0)
-      {
+      if (Distance >= MaximumRange || Distance <= MinimumRange || Distance == 0) {
         Serial.println("Poza zakresem");
       } else  {
         Serial.println(String(Distance) + " cm");
